@@ -323,7 +323,7 @@ def draw_histograms(a,b):
     flags_histogram(a,b,1)
 
 
-a = int(input("select start dates (2002-2022): "))
-b = int(input("select end dates (2002-2022): "))
-
-draw_histograms(a,b)
+if __name__ == '__main__':
+    a = int(input("select start dates (2002-2022): "))
+    b = int(input("select end dates (2002-2022): "))
+    draw_histograms(a,b)
