@@ -91,7 +91,7 @@ def flags_histogram(a, b, option):
                         if data["CVE_Items"][i]["impact"]["baseMetricV3"]["cvssV3"]["attackVector"] == 'NETWORK':
                             attackVector_network_v3 += 1
 
-                        elif data["CVE_Items"][i]["impact"]["baseMetricV3"]["cvssV3"]["attackVector"] == 'ADJACENT':
+                        elif data["CVE_Items"][i]["impact"]["baseMetricV3"]["cvssV3"]["attackVector"] == 'ADJACENT_NETWORK':
                             attackVector_adjacent_v3 += 1
 
                         elif data["CVE_Items"][i]["impact"]["baseMetricV3"]["cvssV3"]["attackVector"] == 'LOCAL':
@@ -148,7 +148,7 @@ def flags_histogram(a, b, option):
                             accessVector_network_v2 +=1
                         elif data["CVE_Items"][i]["impact"]["baseMetricV2"]["cvssV2"]["accessVector"] == 'LOCAL':
                             accessVector_local_v2 +=1
-                        elif data["CVE_Items"][i]["impact"]["baseMetricV2"]["cvssV2"]["accessVector"] == 'ADJACENTNETWORK':
+                        elif data["CVE_Items"][i]["impact"]["baseMetricV2"]["cvssV2"]["accessVector"] == 'ADJACENT_NETWORK':
                             accessVector_Adjacentnetwork_v2 +=1
 
                         if data["CVE_Items"][i]["impact"]["baseMetricV2"]["cvssV2"]["accessComplexity"] == 'LOW':
@@ -317,10 +317,10 @@ def score_histogram(a, b,option):
     plt.show()
 
 def draw_histograms(a,b):
-    # level_histogram(a,b,0)
-    # level_histogram(a,b,1)
-    # score_histogram(a,b,0)
-    # score_histogram(a,b,1)
+    level_histogram(a,b,0)
+    level_histogram(a,b,1)
+    score_histogram(a,b,0)
+    score_histogram(a,b,1)
     flags_histogram(a,b,0)
     flags_histogram(a,b,1)
 
